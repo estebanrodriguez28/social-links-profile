@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: hsl(75, 94%, 57%);
+
+  --white: hsl(0, 0%, 100%);
+
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 400 700;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey-900);
+  color: var(--white);
+  font-family: Inter, sans-serif;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+.social-links-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--grey-800);
+}
+
+#profile-img {
+  width: 100px;
+  border-radius: 100%;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
