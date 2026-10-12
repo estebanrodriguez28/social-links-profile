@@ -14,47 +14,85 @@
 
     <title>Frontend Mentor | Social links profile</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
+    <script type="text/javascript">
+      const copyClipboard = () => {
+        const email = document.getElementById("email");
+        navigator.clipboard.writeText("erod9246@gmail.com");
+        alert("Copied email: " + "erod9246@gmail.com");
+      };
+    </script>
   </head>
   <body>
     <main>
       <article class="social-links-card">
         <img src="assets/images/e.jpg" alt="Picture of me" id="profile-img" />
-        <h1 class="name weight-400">Esteban Rodriguez</h1>
-        <h2 class="location weight-400">San Francisco, CA</h2>
+        <h1 class="name weight-600">Esteban Rodriguez</h1>
+        <h2 class="location weight-600">San Francisco, CA</h2>
         <h3 class="description weight-400">
           "Front-end developer and avid reader."
         </h3>
         <nav>
           <ul>
             <li>
-              <a href="https://github.com/estebanrodriguez28">GitHub</a>
+              <a
+                href="https://github.com/estebanrodriguez28"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
             </li>
             <li>
-              <a href="https://www.frontendmentor.io/profile/estebanrodriguez28"
+              <a
+                href="https://www.frontendmentor.io/profile/estebanrodriguez28"
+                target="_blank"
+                rel="noopener noreferrer"
                 >Frontend Mentor</a
               >
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/esteban-r-e/">LinkedIn</a>
+              <a
+                href="https://www.linkedin.com/in/esteban-r-e/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
             </li>
             <li>
-              <a href="https://estebanrodriguez28.github.io/portfolio-website/"
+              <a
+                href="https://estebanrodriguez28.github.io/portfolio-website/"
+                target="_blank"
+                rel="noopener noreferrer"
                 >Portfolio Site</a
               >
             </li>
             <li>
-              <p>Email</p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="email"
+                onclick="copyClipboard()"
+                ><span>Email</span></a
+              >
             </li>
           </ul>
         </nav>
       </article>
     </main>
     <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/estebanrodriguez28">Esteban Rodriguez</a>.
+      </p>
+      <p>
+        <a
+          href="https://www.flaticon.com/free-icons/todo-icon"
+          title="todo icon icons"
+          >Todo icon icons created by Creative Squad - Flaticon</a
+        >
+      </p>
     </footer>
   </body>
 </html>
