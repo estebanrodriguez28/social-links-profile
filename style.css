@@ -21,12 +21,6 @@ ul {
   list-style: none;
 }
 
-@font-face {
-  font-family: Inter;
-  src: url("assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
-  font-weight: 400 700;
-}
-
 body {
   display: flex;
   flex-direction: column;

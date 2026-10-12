@@ -26,8 +26,6 @@ Users should be able to:
 
     -See hover and focus states for all interactive elements on the page
 
-Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc.
-
 ### Screenshot
 
 ![](./assets/images/social-links-screenshot.png)
@@ -48,7 +46,6 @@ Download the starter code and go through the README.md file. This will provide f
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 
 ### What I learned
 

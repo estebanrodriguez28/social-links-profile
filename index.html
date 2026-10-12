@@ -17,8 +17,14 @@
     <script type="text/javascript">
       const copyClipboard = () => {
         const email = document.getElementById("email");
-        navigator.clipboard.writeText("erod9246@gmail.com");
-        alert("Copied email: " + "erod9246@gmail.com");
+        navigator.clipboard
+          .writeText("erod9246@gmail.com")
+          .then(function () {
+            alert("Copied email to clipboard: " + "erod9246@gmail.com");
+          })
+          .catch(function () {
+            alert("Could not copy email to clipboard: " + "erod9246@gmail.com");
+          });
       };
     </script>
   </head>
@@ -77,17 +83,25 @@
     <footer class="attribution">
       <p>
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-                rel="noopener noreferrer">Frontend Mentor</a
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Frontend Mentor</a
         >. Coded by
-        <a href="https://github.com/estebanrodriguez28" target="_blank"
-                rel="noopener noreferrer"" >Esteban Rodriguez</a>.
+        <a
+          href="https://github.com/estebanrodriguez28"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Esteban Rodriguez</a
+        >.
       </p>
       <p>
         <a
           href="https://www.flaticon.com/free-icons/todo-icon"
-          title="todo icon icons" target="_blank"
-                rel="noopener noreferrer"
+          title="todo icon icons"
+          target="_blank"
+          rel="noopener noreferrer"
           >Todo icon icons created by Creative Squad - Flaticon</a
         >
       </p>
