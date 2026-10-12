@@ -1,107 +1,213 @@
-# Frontend Mentor - Social links profile
+# Frontend Mentor - Social links profile solution
 
-![Design preview for the Social links profile coding challenge](./preview.jpg)
+This is a solution to the [Social links profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
+Challenge is to build out this social links profile and get it looking as close to the design as possible.
 
-Your challenge is to build out this social links profile and get it looking as close to the design as possible.
+Users should be able to:
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+    -See hover and focus states for all interactive elements on the page
 
-Your users should be able to: 
+Download the starter code and go through the README.md file. This will provide further details about the project. The style-guide.md file is where you'll find colors, fonts, etc.
 
-- See hover and focus states for all interactive elements on the page
+### Screenshot
 
-### Want some support on the challenge? 
+![](./assets/images/social-links-screenshot.png)
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- Github URL: [Github Repository](https://github.com/estebanrodriguez28/social-links-profile)
+- Live Site URL: [Live Site](https://estebanrodriguez28.github.io/social-links-profile/)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## My process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Sturctured semantic HTML first
+- Wrote out base styles in css (fonts, resets)
+- Added styles in css from top of the page down
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Built with
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### What I learned
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+When you set a flex container to column and set align-items to center, the flex items width does not stretch out to fill the container, instead their width fits to the content. This made the nav element sorrounding the links match the width of the links, but the design was for the links to take up the whole width of the card.
 
-## Using AI coding assistants
+Solution was to make the nav stretch to fill the entire card using the align-self property so that the hyperlinks could be styled to fill the whole card.
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+```css
+.social-links-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+.social-links-card nav {
+  align-self: stretch;
+}
+```
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+Variable fonts allows you to declare custom font once in the css and set a font-weight range instead of importing several different font files (bold, semi-bold, etc) making variable fonts more flexible and concise.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+```css
+@font-face {
+  font-family: Inter;
+  src: url("assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 400 700;
+}
+```
 
-## Building your project
+Images that have a height or width that is not equal will not be a symetrical circle with the border radius preoprty. To fix this set width and height to be the same then use object-fit in css to preserve aspect ratio so image does not look stretched out
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```css
+#profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px 0px;
+}
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+I learned how to set up a block of nav links using semantic html (nav, ul, li). Also how to use Emmet, shortcut for writing html quickly to create multiple links using this structure you can do:
 
-## Deploying your project
+```html
+nav>ul>(li>a)*5
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+to make html quicker to create
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```html
+<nav>
+  <ul>
+    <li>
+      <a
+        href="https://github.com/estebanrodriguez28"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
+    </li>
+  </ul>
+</nav>
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+For styling navigation links, I learned that we can make hyperlinks (a tags) display block since a tags are inline. To make the link take up full width of the card we set display to block.
 
-## Create a custom `README.md`
+Also I was going to style the list item instead of the a tag however the a tag is where the user can actually click so its better to style the a tag instead so a user can click anywhere within the link's width not just the text which would happen if you style the li tag.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Focus visible makes sure keyboard users can see active states as they go through hyperlinks to receive visual feedback.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+.social-links-card a {
+  display: block;
+  /* Other properties */
+  &:hover,
+  &:focus-visible {
+    background-color: var(--green);
+    color: var(--grey-900);
+  }
+}
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I wanted the text for the email hyperlink to change to my actual email on hover so to do that used a pseduo element. I also wanted to put an image in the link to show email could be copied so that was inserted with a pseudo element as well.
 
-## Submitting your solution
+However setting the width for the image as pseduo element did not work so had to use background-image and background-size properties. Why? Not sure stackoverflow pointed me those properties.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+When you set a parent to position relative then you can set positon absolute to the children and the children are absolutely positioned within its parent!
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+```css
+#email {
+  position: relative;
+  &:hover {
+    & > span {
+      display: none;
+    }
 
-## Sharing your solution
+    &::after {
+      content: "erod9246@gmail.com";
+    }
 
-There are multiple places you can share your solution:
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: url(assets/images/todo-icon.png);
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      right: 0;
+      margin: 5px;
+    }
+  }
+}
+```
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+Bit of javascript to copy my email to clipboard when its link is clicked
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+```js
+const copyClipboard = () => {
+  const email = document.getElementById("email");
+  navigator.clipboard.writeText("erod9246@gmail.com");
+  alert("Copied email: " + "erod9246@gmail.com");
+};
+```
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+Lastly, within the footer, I wanted the last link to break onto the next line since the links looked too squished together being all in the same line. I tried setting a width small enough on the parent container to break the last link onto next line but that caused layout issues with hover states.
 
-## Got feedback for us?
+A fix I got from Claude was to think about how in writing, separate thoughts go in separate paragraphs, after that I got the idea to use p tag to wrap first two links so they become wrapped in a block element and take up a whole line. So then the next link has to break onto the next line, no problems with hover states.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+```html
+<p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+                rel="noopener noreferrer">Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/estebanrodriguez28" target="_blank"
+                rel="noopener noreferrer"" >Esteban Rodriguez</a>.
+      </p>
+```
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Continued development
 
-**Have fun building!** 🚀
-# social-links-profile
+I realized that there are some concepts in flex that I still dont fully understand such as how aling-items fit flex items width to their content. Going to continue practicing with project to gain better understanding of flex.
+
+### Useful resources
+
+I should save my resources as I go along cause I close them then forget which one I used specifically. However here's what I remember for this project:
+
+- Semantic HTML Article - There was an article that went through examples of semantic html that is where I noticed that I was missing more semantic html for my hyper links (nav, ul, li) before I just had all the nav links by themselves as a tags
+- [Copy to clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - This article showed be how to use javascript to copy to clipboard
+
+### AI Collaboration
+
+- I used Claude Desktop, connecting my project to a chat
+- I used Claude for debugging and to guide me closer toward the design. When I did not know why my links weren't taking up the full width of the card I asked Claude what I thought was the problem the nav tag being the flex item but not taking up the full width. That question guided me toward realizing how flexbox works with align-items.
+  \_ Process generally is when stuck, search first, then if still stuck tell Claude what the problem is and what I am thinking to solve it. Then Claude based on the instructions included by Front-end mentor, guides me toward the answer by asking me questions rather than giving me the answer
+- At first claude gave me the answer for why my image was not a symmetrical circle pointing me toward the css property and giving me copy and paste solution. For some reason clauded did not read the AI instructions in this project before giving me the first answer. I learned how to solve it and eventually why but I did not think through the problem enough to solve it by myself since claude gave me full answer
+- I think what went well is how Claude guides me toward answers/understanding what didn't go well was the first answer I got giving me a complete solution
+
+## Author
+
+- Frontend Mentor - [@estebanrodriguez28](https://www.frontendmentor.io/profile/estebanrodriguez28)
