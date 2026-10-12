@@ -41,7 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 327px;
-  height: 570px;
+  height: 560px;
   padding: 30px;
   border-radius: 10px;
   background-color: var(--grey-800);
@@ -87,7 +87,8 @@ body {
   align-self: stretch;
 }
 
-.social-links-card a {
+.social-links-card a,
+.social-links-card button {
   display: block;
   margin: 12px 0px;
   padding: 12px 0px;
@@ -110,6 +111,8 @@ body {
 }
 
 #email {
+  width: 100%;
+  border: none;
   position: relative;
   &:hover,
   &:focus-visible {

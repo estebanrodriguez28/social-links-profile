@@ -195,7 +195,7 @@ I realized that there are some concepts in flex that I still dont fully understa
 I should save my resources as I go along cause I close them then forget which one I used specifically. However here's what I remember for this project:
 
 - Semantic HTML Article - There was an article that went through examples of semantic html that is where I noticed that I was missing more semantic html for my hyper links (nav, ul, li) before I just had all the nav links by themselves as a tags
-- [Copy to clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - This article showed be how to use javascript to copy to clipboard
+- [Copy to clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - This article showed me how to use javascript to copy to clipboard
 
 ### AI Collaboration
 
