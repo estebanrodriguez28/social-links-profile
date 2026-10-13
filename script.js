@@ -1,5 +1,4 @@
 const copyClipboard = () => {
-  console.log("Firing func");
   navigator.clipboard
     .writeText("erod9246@gmail.com")
     .then(function () {
