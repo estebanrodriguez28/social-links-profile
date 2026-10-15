@@ -75,18 +75,6 @@ Variable fonts allows you to declare custom font once in the css and set a font-
 }
 ```
 
-Images that have a height or width that is not equal will not be a symetrical circle with the border radius preoprty. To fix this set width and height to be the same then use object-fit in css to preserve aspect ratio so image does not look stretched out
-
-```css
-#profile-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 15px 0px;
-}
-```
-
 I learned how to set up a block of nav links using semantic html (nav, ul, li). Also how to use Emmet, shortcut for writing html quickly to create multiple links using this structure you can do:
 
 ```html
@@ -128,49 +116,6 @@ Focus visible makes sure keyboard users can see active states as they go through
 }
 ```
 
-I wanted the text for the email hyperlink to change to my actual email on hover so to do that used a pseduo element. I also wanted to put an image in the link to show email could be copied so that was inserted with a pseudo element as well.
-
-However setting the width for the image as pseduo element did not work so had to use background-image and background-size properties. Why? Not sure stackoverflow pointed me those properties.
-
-When you set a parent to position relative then you can set positon absolute to the children and the children are absolutely positioned within its parent!
-
-```css
-#email {
-  position: relative;
-  &:hover {
-    & > span {
-      display: none;
-    }
-
-    &::after {
-      content: "erod9246@gmail.com";
-    }
-
-    &::before {
-      position: absolute;
-      content: "";
-      background-image: url(assets/images/todo-icon.png);
-      background-size: cover;
-      width: 20px;
-      height: 20px;
-      top: 0;
-      right: 0;
-      margin: 5px;
-    }
-  }
-}
-```
-
-Bit of javascript to copy my email to clipboard when its link is clicked
-
-```js
-const copyClipboard = () => {
-  const email = document.getElementById("email");
-  navigator.clipboard.writeText("erod9246@gmail.com");
-  alert("Copied email: " + "erod9246@gmail.com");
-};
-```
-
 Within the footer, I wanted the last link to break onto the next line since the links looked too squished together being all in the same line. I tried setting a width small enough on the parent container to break the last link onto next line but that caused layout issues with hover states.
 
 A fix I got from Claude was to think about how in writing, separate thoughts go in separate paragraphs, after that I got the idea to use p tag to wrap first two links so they become wrapped in a block element and take up a whole line. So then the next link has to break onto the next line, no problems with hover states.
@@ -198,6 +143,10 @@ Button in this case is more correct because clicking performs an action which is
 }
 ```
 
+I used a custom image for the profile picture but someone commented in my submission that the image could be optimized to be smaller. I used a tool online to set the aspect ratio 1:1, then using another tool I converted the image from png to webp. A extension that reduces file size. After these changes I was able to make the image a proportional circle without using the object-fit property, significantly reduced the size of the image, improving the site's performance.
+
+I learned about Retina screens, how to make images look sharp on a Retina screen (like iPhones or several other modern devices) we need to double the size of the image but can set the size we want in css, so that the image maintains it's detail and remains clear. I still don't fully understand Retina screens but hope to understand more as I progress and how they fit into web development.
+
 ### Continued development
 
 I realized that there are some concepts in flex that I still dont fully understand such as how aling-items fit flex items width to their content. Going to continue practicing with project to gain better understanding of flex.
@@ -207,7 +156,7 @@ I realized that there are some concepts in flex that I still dont fully understa
 I should save my resources as I go along cause I close them then forget which one I used specifically. However here's what I remember for this project:
 
 - Semantic HTML Article - There was an article that went through examples of semantic html that is where I noticed that I was missing more semantic html for my hyper links (nav, ul, li) before I just had all the nav links by themselves as a tags
-- [Copy to clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - This article showed me how to use javascript to copy to clipboard
+- [Color contrast](https://web.dev/articles/testing-web-design-color-contrast) - This article showed me how to view if a color meets the WCAG color contrast standards using devtools making sure the colors have enough contrast and are accessible
 
 ### AI Collaboration
 
