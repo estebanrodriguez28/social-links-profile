@@ -171,7 +171,7 @@ const copyClipboard = () => {
 };
 ```
 
-Lastly, within the footer, I wanted the last link to break onto the next line since the links looked too squished together being all in the same line. I tried setting a width small enough on the parent container to break the last link onto next line but that caused layout issues with hover states.
+Within the footer, I wanted the last link to break onto the next line since the links looked too squished together being all in the same line. I tried setting a width small enough on the parent container to break the last link onto next line but that caused layout issues with hover states.
 
 A fix I got from Claude was to think about how in writing, separate thoughts go in separate paragraphs, after that I got the idea to use p tag to wrap first two links so they become wrapped in a block element and take up a whole line. So then the next link has to break onto the next line, no problems with hover states.
 
@@ -184,6 +184,18 @@ A fix I got from Claude was to think about how in writing, separate thoughts go 
         <a href="https://github.com/estebanrodriguez28" target="_blank"
                 rel="noopener noreferrer"" >Esteban Rodriguez</a>.
       </p>
+```
+
+For the button, just setting it to dispaly block will not make the button take up the full width of the parent because forms elements like button or input have their width set to fit the content so you must also specify width to 100% to make the form element in this case button take up the full width.
+
+Button in this case is more correct because clicking performs an action which is more appropriate than having an a tag for a hyperlink since that implies navigation.
+
+```css
+#email {
+  width: 100%;
+  border: none;
+  position: relative;
+}
 ```
 
 ### Continued development
@@ -201,7 +213,7 @@ I should save my resources as I go along cause I close them then forget which on
 
 - I used Claude Desktop, connecting my project to a chat
 - I used Claude for debugging and to guide me closer toward the design. When I did not know why my links weren't taking up the full width of the card I asked Claude what I thought was the problem the nav tag being the flex item but not taking up the full width. That question guided me toward realizing how flexbox works with align-items.
-  \_ Process generally is when stuck, search first, then if still stuck tell Claude what the problem is and what I am thinking to solve it. Then Claude based on the instructions included by Front-end mentor, guides me toward the answer by asking me questions rather than giving me the answer
+- Process generally is when stuck, search first, then if still stuck tell Claude what the problem is and what I am thinking to solve it. Then Claude based on the instructions included by Front-end mentor, guides me toward the answer by asking me questions rather than giving me the answer
 - At first claude gave me the answer for why my image was not a symmetrical circle pointing me toward the css property and giving me copy and paste solution. For some reason clauded did not read the AI instructions in this project before giving me the first answer. I learned how to solve it and eventually why but I did not think through the problem enough to solve it by myself since claude gave me full answer
 - I think what went well is how Claude guides me toward answers/understanding what didn't go well was the first answer I got giving me a complete solution
 
